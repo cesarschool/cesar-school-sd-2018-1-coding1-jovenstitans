@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  * Implemente a função FizzBizz conforme definida abaixo. A mesma deve receber dois números inteiros não negativos (start e end) e imprimir a partir de start (incluído) até end (excluído) seguindo a mesma lógica do FizzBuzz.
  * 
@@ -6,30 +7,22 @@
  * Output: utilize a função printf da biblioteca stdio.h e escreva um número ou palavra por linha (\n):
  * 
  */
-#include <stdio.h>
-
-void fizzBizz(int start, int end){
+void fizzBizz(int start, int end)
 {
     printf("\nFizzBizz::START: %d, %d\n", start, end);
     
-    int i;
-    
-    for(i = start; i < end; i = i + 1 ){
-        
-        if((i%3!=0) && (i%6!=0)){
-            printf ("%d\n", i);
-        }
-        else {
-            if(i%3==0) {
-                printf ("Fizz\n");
-            }
-            if(i%6==0) {
-                printf ("Buzz\n");
-            }
-        }
-    }
-}
-
+      while (start <= end) {
+          if (start % 3 == 0 && start % 5 == 0) {
+              printf("FizzBuzz\n");
+          } else if (start % 3 == 0) {
+              printf("Fizz\n");
+          } else if (start % 5 == 0) {
+              printf("Buzz\n");
+          } else {
+              printf("%d\n", start);
+          }
+          start++;
+      }
     
     printf("\nFizzBizz::END\n");
 }
@@ -38,7 +31,6 @@ int main()
 {
     printf("\n### CESAR School :: Sistemas Digitais :: Coding1 :: FizzBizz ###\n");
     
-
     fizzBizz(1, 6);
     fizzBizz(1, 16);
     fizzBizz(1, 100);
